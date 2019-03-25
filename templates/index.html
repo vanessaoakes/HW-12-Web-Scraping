@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars</title>
+</head>
+
+<body>
+    <h1>
+            <div class="jumbotron">
+                    <h1 class="display-3">Mission to Mars!</h1>
+                    <hr class="my-4">
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+                    </p>
+                  </div>
+    </h1>
+     <h2>
+            <h2>Latest Mars News</h2>
+            <p><strong>{{ dict.news_title }}</strong></p>
+            <p><small>{{ dict.news_p }}</small></p>
+
+    </h2>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-sm">
+                <img class = "img-fluid" src="{{ dict.featured_image_url }}"/>
+
+
+            </div>
+            <div class = "col-sm">
+                    <div class="card border-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-header"></div>
+                            <div class="card-body">
+                              <h4 class="card-title">Current Weather on Mars</h4>
+                              <p class="card-text">{{ dict.mars_weather }}</p>
+                            </div>
+                    </div>
+                    <h3>
+                        Mars Facts
+                    </h3>
+                    <table border=1>
+                        <tr>
+                            <td>
+                            </td>
+                            <td><strong>
+                                value
+                            </strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>description</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>
+                            Equatorial Diameter:
+                        </strong></td>
+                            <td>6,792 km</td>
+                        </tr>
+                        <tr>
+                            <td><strong>
+                                Polar Diameter:
+                            </strong></td>
+                            <td>
+                                6,752 km
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mass:</strong></td>
+                            <td>6.42 x 10^23 kg (10.7% Earth)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Moons:</strong></td>
+                            <td>2 (Phobos & Deimos)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Oribit Distance:</strong></td>
+                            <td>227,943,824 km (1.52 AU)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>
+                                Surface Temperature:
+                            </strong></td>
+                            <td>
+                            -153 to 20 ºC
+                        </td></tr>
+                        <tr>
+                            <td><strong>
+                            First Record:
+                            </strong></td>
+                            <td>2nd millennium BC</td>
+                        </tr>
+                        <tr>
+                            <td><strong>
+                                
+                                    Recorded By:
+                                
+                            </strong></td>
+                            <td>
+                                Eqyptian astronomers
+                            </td>
+                        </tr>
+
+                    </table>
+            </div>
+
+        </div>
+        <div class= "row">
+                <div class="col-sm">
+                        <div class="jumbotron">
+                                <h1 class="display-6">Mars Hemispheres</h1>
+                                <hr class="my-4">
+                                
+                                <div class ="container">
+                                    <div class ="row">
+                                    {% for list in dict.usgs_list %}
+                                    <div class = "col-sm">
+                                             <img class="img-fluid" src="{{ list.img_url }}" >
+                                             {{ list.title }}
+                                            </div>
+                                    {% endfor %}
+
+                                    
+                                </div>
+                        </div>
+        
+                </div>
+
+        </div>
+
+    </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+       
+</body>
+</html>
